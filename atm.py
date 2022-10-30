@@ -212,7 +212,6 @@ def numberOfTransactions():
     os.system('cls')
     print('\n')
     name = input("Enter username:")
-    pin = input("Enter pin:")
     try:
         pin = int(input("Enter pin:"))
         varify_user = (f"select * from user as u where u.name = '{name}' and u.pin = {pin}")
@@ -242,7 +241,6 @@ def amountWithdrawnOnPresentDay():
     os.system('cls')
     print('\n')
     name = input("Enter username:")
-    pin = input("Enter pin:")
     try:
         pin = int(input("Enter pin:"))
         varify_user = (f"select * from user as u where u.name = '{name}' and u.pin = {pin}")
@@ -384,6 +382,7 @@ def main():
                 print("     1.Sign Up")
                 print("     2.Login")
                 print("     3.Deposit")
+                print("     4.Go To Main Menu \n")
 
                 choice2 = int(input("Enter Your Choice: "))
                 if choice2 == 1:
@@ -397,7 +396,7 @@ def main():
                     break
         else:
             os.system('cls')
-            print("Thank you for choosing us as your bank , visit again :)")
+            print("\nThank you for choosing us as your bank , visit again :)")
             cnx.close()
             sys.exit()
 
