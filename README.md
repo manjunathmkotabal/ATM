@@ -4,7 +4,7 @@ This system allows bank customers to deposite or withdraw money,check their bala
 
 An ATM system generally has two components – 
 
-1. A website or app that allows customers to view the menu deposite or withdraw money, 
+1. An app that allows customers to view the menu deposite or withdraw money, 
 2. An admin (bank employee) interface that enables the admin to check the balance and fulfill if false below a certain level.
 
 
