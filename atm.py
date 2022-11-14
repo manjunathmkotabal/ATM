@@ -1,13 +1,15 @@
-#update translimit daily
-#see if you can get the required attributes in user_verify 
-#no of transaction on the given day
-#handle amount input for int or not 
+ 
 from __future__ import print_function
 import random
 import sys
 import os
 import mysql.connector
 from mysql.connector import errorcode
+
+#update translimit daily
+#see if you can get the required attributes in user_verify 
+#no of transaction on the given day
+#handle amount input for int or not
 
 try:
     cnx = mysql.connector.connect(  user='root',
