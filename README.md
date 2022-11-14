@@ -17,4 +17,3 @@ Display menu having options to choose
 Specifying restrictions for number of transactions in a day
 User can see their recent transactions 
 User and admin can change password
-nothing else
