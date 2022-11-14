@@ -21,3 +21,4 @@ Offer customers the choice of eat-in/delivery
 Display the estimated preparation time for online orders
 Detailed statistics including daily sales totals and more
 Setup multiple stores and control them all from one system
+hello
