@@ -13,3 +13,7 @@ Withdraw or deposite money
 Printing transactions receipt automatically 
 Customers can check their balance
 Refilling ATM machines on a daily bases
+Display menu having options to choose 
+Specifying restrictions for number of transactions in a day
+User can see their recent transactions 
+User and admin can change password
