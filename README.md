@@ -9,6 +9,7 @@ An ATM system generally has two components –
 
 
 Major Functionalities / Features Of The System
+<<<<<<< HEAD
 withdraw money
 Orders received will automatically print to the printer
 Customers can order from a mobile, tablet or pc
@@ -21,3 +22,13 @@ Offer customers the choice of eat-in/delivery
 Display the estimated preparation time for online orders
 Detailed statistics including daily sales totals and more
 Setup multiple stores and control them all from one system
+=======
+Withdraw or deposite money 
+Printing transactions receipt automatically 
+Customers can check their balance
+Refilling ATM machines on a daily bases
+Display menu having options to choose 
+Specifying restrictions for number of transactions in a day
+User can see their recent transactions 
+User and admin can change password
+nothing else
