@@ -9,7 +9,15 @@ An ATM system generally has two components –
 
 
 Major Functionalities / Features Of The System
-Withdraw or deposite money 
-Printing transactions receipt automatically 
-Customers can check their balance
-Refilling ATM machines on a daily bases
+withdraw money
+Orders received will automatically print to the printer
+Customers can order from a mobile, tablet or pc
+Edit menus, categories and pricing in real-time
+Display your menu and prices online
+Specify operating hours for online orders
+Food reservation at any desired schedule
+Hide unavailable products for delivery
+Offer customers the choice of eat-in/delivery
+Display the estimated preparation time for online orders
+Detailed statistics including daily sales totals and more
+Setup multiple stores and control them all from one system
