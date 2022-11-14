@@ -1,14 +1,15 @@
 #atm simulator using python
 
-This system allows bakery owners to sell their products to customer online via a web interface. The user can order and then pay for the item.
-An online food ordering system generally has two components – 
+This system allows bank customers to deposite or withdraw money,check their balance and checkout recent transactions. 
 
-1. a website or app that allows customers to view the menu and place an order, 
-2. an admin (Bakery owner) has interface that enables the restaurant to receive and fulfil customer orders.
+An ATM system generally has two components – 
+
+1. a website or app that allows customers to view the menu deposite or withdraw money, 
+2. an admin (bank employee) has interface that enables the admin to check the balance and fulfill if false below a certain level.
 
 
 Major Functionalities / Features Of The System
-Accept online payments
+withdraw money
 Orders received will automatically print to the printer
 Customers can order from a mobile, tablet or pc
 Edit menus, categories and pricing in real-time
