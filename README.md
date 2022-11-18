@@ -11,13 +11,13 @@ An *ATM* system generally has two components
 
 ## Major Functionalities / Features Of The System
 
---> Withdraw or deposite money
---> Printing transactions receipt automatically
---> Customers can check their balance
---> Refilling ATM machines on a daily bases
---> Display menu having options to choose
---> Specify operating hours for online orders
---> User can see their recent transactions
+- Withdraw or deposite money
+- Printing transactions receipt automatically
+- Customers can check their balance
+- Refilling ATM machines on a daily bases
+- Display menu having options to choose
+- Specify operating hours for online orders
+- User can see their recent transactions
 
 
 ---
