@@ -1,4 +1,4 @@
-**ATM Simulator**
+# ATM Simulator
 
 This system allows bank customers to deposite or withdraw money,check their balance and checkout recent transactions. 
 
@@ -8,7 +8,7 @@ An ATM system generally has two components –
 2. An admin (bank employee) interface that enables the admin to check the balance and fulfill if false below a certain level.
 
 
-# Major Functionalities / Features Of The System
+## Major Functionalities / Features Of The System
 
 =======
 --> Withdraw or deposite money
@@ -22,14 +22,14 @@ An ATM system generally has two components –
 =======
 
 ---
-# TechStack
+## TechStack
 
 - Python
 
 - Mysql
 
 ---
-# Project Structure
+## Project Structure
 
 ```
 $PROJECT_ROOT
