@@ -75,12 +75,36 @@ def login_user():
             print("logged in successfully")
             return 1
         else:
-            print("Invalid Credentials")
+            print("Invalid Credentials\n")
             return 0
     except ValueError:
         print("Bro! , PIN must be Integer :(")
         return 0
     
+def user_forgot_pass():
+    os.system('cls')
+    print('\n')
+    name = input("Enter username:")
+    try:
+        varify_user = (f"select * from user as u where u.name = '{name}'")
+        cursor.execute(varify_user)
+        #print(cursor.rowcount)
+        if cursor.rowcount:
+            pin=input("enter new pin:\n")
+            confirm_pin=input("confirm new pin:\n")
+            if(pin==confirm_pin):
+                update_user = (f"update user set pin = {pin} where user.name = '{name}'")
+                cursor.execute(update_user)
+                cnx.commit()
+                print(f"{name} your pin is updated :)\n")
+                return 1
+        else:
+            print("Invalid Username\n")
+            print(f"{name} you should consider signing up first.\n")
+            return 0
+    except ValueError:
+        print("Bro! , PIN must be Integer :(")
+        return 0
 
 
 def  deposit_user():
@@ -258,7 +282,7 @@ def withdraw_user():
     except ValueError:
         print("Bro! , PIN must be Integer :(")
  
-def balanceEnquiry():
+def user_balanceEnquiry():
     os.system('cls')
     print('\n')
     name = input("Enter username:")
@@ -337,10 +361,6 @@ def amountWithdrawnOnPresentDay():
             print("Invalid Credentials")
     except ValueError:
         print("Bro! , PIN must be Integer :(")
-
-def changepass_user():
-    pass
-    
     
  
 def signup_admin():
@@ -362,9 +382,35 @@ def login_admin():
     #print(cursor.rowcount)
     if cursor.rowcount:
         print(" admin logged in successfully")
-        logged = 1
+        return 1
     else:
         print("Invalid Credentials")
+
+def admin_forgot_pass():
+    os.system('cls')
+    print('\n')
+    name = input("Enter adminname:")
+    try:
+        varify_user = (f"select * from user as u where u.name = '{name}'")
+        cursor.execute(varify_user)
+        #print(cursor.rowcount)
+        if cursor.rowcount:
+            password=input("enter new password:\n")
+            confirm_password=input("confirm new password:\n")
+            if(password==confirm_password):
+                update_user = (f"update admin set password = {password} where admin.name = '{name}'")
+                cursor.execute(update_user)
+                cnx.commit()
+                print(f"{name} your password is updated :)\n")
+                return 1
+        else:
+            print("Invalid Username\n")
+            print(f"{name} you should consider signing up first.\n")
+            return 0
+    except ValueError:
+        print("Bro! , Password must be Integer :(")
+        return 0
+
 
  
 def deposit_admin():
@@ -391,6 +437,28 @@ def deposit_admin():
 
     else:
         print("Invalid Credentials")
+
+def admin_balanceEnquiry():
+    os.system('cls')
+    print('\n')
+    name = input("Enter admin name:")
+    try:
+        password = int(input("Enter password:"))
+        varify_admin = (f"select * from admin where admin.name = '{name}' and admin.password = '{password}'")
+        cursor.execute(varify_admin)
+        
+        #print(cursor.rowcount)
+        if cursor.rowcount:
+            query = (f"select atmamount from atm")
+            cursor.execute(query)
+            bal = cursor.fetchone()
+            bal = bal[0]
+            print(f"atm balance is :{bal}")
+
+        else:
+            print("Invalid Credentials")
+    except ValueError:
+        print("Bro! , PIN must be Integer :(")
 
 
 # def setTransactionLimit():
@@ -438,8 +506,7 @@ def main():
                         print("     3.Enquire Balance")
                         print("     4.See No Of Transactions")
                         print("     5.See Amount Withdrawn Today")
-                        print("     6.change password ")
-                        print("     7.Go To Previous Page  \n\n")
+                        print("     6.Go To Previous Page  \n\n")
                         choice3 = int(input("Enter Your Choice(1-7): "))
                         if(choice3==1):
                             deposit_user()
@@ -448,7 +515,7 @@ def main():
                             withdraw_user()
                             break
                         elif choice3 == 3:# and logged:
-                            balanceEnquiry()
+                            user_balanceEnquiry()
                             break
                         elif choice3 == 4:# and logged:
                             numberOfTransactions()
@@ -456,37 +523,67 @@ def main():
                         elif choice3 == 5 :#and logged:
                             amountWithdrawnOnPresentDay()
                             break
-                        elif choice3 == 6 :#and logged:
-                            changepass_user()
+                        else:
+                            break
+
+                    else:
+                        print("Forgot Pin?")
+                        print("  Enter 1 to reset.")
+                        print("  Enter 2 to exit. \n\n")
+                        choice4 = int(input("Enter Your Choice: "))
+                        if(choice4==1):
+                            user_forgot_pass()
                             break
                         else:
                             break
+
+                            
                 else:
                     break
                         
                         
 
-                
-        elif(choice1 == 2):
-            os.system('cls')
+        if(choice1 == 2):
+            # os.system('cls')
             while True:
                 print("\n")
                 print("you wanna?\n")
                 print("     1.Sign Up")
-                print("     2.Login")
-                print("     3.Deposit")
-                print("     4.Go To Home Page \n")
-
-                choice2 = int(input("Enter Your Choice: "))
-                if choice2 == 1:
+                print("     2.Log In")
+                print("     3.Go To Previous Page")
+                choice = int(input("Enter Your Choice(1/2): "))
+                if(choice == 1):
                     signup_admin()
-                elif choice2 == 2:
-                    login_admin()
-                elif choice2 == 3:
-                    deposit_admin()
+                elif(choice == 2):
+                    val=login_admin()
+                    if(val):
+                        print("     1.Deposit")
+                        print("     2.Enquire Balance")
+                        print("     6.Go To Previous Page  \n\n")
+                        choice3 = int(input("Enter Your Choice(1/2): "))
+                        if(choice3==1):
+                            deposit_user()
+                            break
+                        elif choice3 == 2:# and logged:
+                            admin_balanceEnquiry()
+                            break
+                        else:
+                            break
+
+                    else:
+                        print("Forgot Pin?")
+                        print("  Enter 1 to reset.")
+                        print("  Enter 2 to exit. \n\n")
+                        choice4 = int(input("Enter Your Choice: "))
+                        if(choice4==1):
+                            admin_forgot_pass()
+                            break
+                        else:
+                            break
+           
                 else:
-                    logged=0
                     break
+
         else:
             os.system('cls')
             print("\nThank you for choosing us as your bank , visit again :)")
