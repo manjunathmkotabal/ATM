@@ -63,7 +63,7 @@ def signup_user():
 
 
 def login_user():
-    os.system('cls')
+    # os.system('cls')
     print('\n')
     name = input("Enter username:")
     try:
@@ -108,7 +108,7 @@ def user_forgot_pass():
 
 
 def  deposit_user():
-    os.system('cls')
+    # os.system('cls')
     print('\n')
     name = input("Enter username:")
     try:
@@ -298,7 +298,7 @@ def user_balanceEnquiry():
             cursor.execute(query)
             bal = cursor.fetchone()
             bal = bal[0]
-            print(bal)
+            print(f"Your balace is:{bal}")
 
         else:
             print("Invalid Credentials")
@@ -373,7 +373,7 @@ def signup_admin():
     cnx.commit()
  
 def login_admin():
-    os.system('cls')
+    # os.system('cls')
     print('\n')
     name = input("Enter admin name:")
     password = input("Enter password:")
@@ -477,7 +477,7 @@ def admin_balanceEnquiry():
 
 def main():
     while True:
-        # os.system('cls')
+        #os.system('cls')
         print("\n")
         print("******* WELCOME TO BANK OF GreedyMens *******")
         print("---------------------------------------------\n")
@@ -488,7 +488,7 @@ def main():
         print()
         choice1 = int(input("Enter Your Choice(1/2): "))
         if(choice1 == 1):
-            # os.system('cls')
+            os.system('cls')
             while True:
                 print("\n")
                 print("you wanna?\n")
@@ -544,7 +544,7 @@ def main():
                         
 
         if(choice1 == 2):
-            # os.system('cls')
+            os.system('cls')
             while True:
                 print("\n")
                 print("you wanna?\n")
@@ -585,10 +585,9 @@ def main():
                     break
 
         else:
-            os.system('cls')
+            #os.system('cls')
             print("\nThank you for choosing us as your bank , visit again :)")
             cnx.close()
-            sys.exit()
 
 
 if __name__=='__main__':
